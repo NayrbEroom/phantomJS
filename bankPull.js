@@ -1,12 +1,13 @@
 
 //change the var page = new to this require('webpage').create();
-var page = new WebPage(),
-  system = require(system);
+var page = require('webpage'),
+  //system = require('system'),
+  address
 
-if(system.args.length < 3) {
+/*if(system.args.length < 3) {
   console.log('Address Needed'); //if above var does not get at least two arguments from the WebPage object at declaration
   phantom.exit(;;
-}
+}*/
 
 else {
   console.log('Received Valid Entry')
@@ -15,8 +16,8 @@ else {
       //page.injectJs('jquery-3.4.1.min.js');//injects jquery
       console.log("Success");
       page.evaluate(function(){
-        document.getElemenrById('labelForonlineId1').value = system.args[1];
-
+          document.getElementById("labelForonlineId1").value="bryanmoore";
+          page.render('name.png');
       }, system);
 
       phantom.exit();
